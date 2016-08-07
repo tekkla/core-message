@@ -17,7 +17,7 @@ interface MessageInterface
      *
      * @param string $message
      */
-    public function setMessage($message);
+    public function setMessage(string $message);
 
     /**
      * Returns message content
@@ -26,14 +26,14 @@ interface MessageInterface
      *
      * @return string
      */
-    public function getMessage();
+    public function getMessage(): string;
 
     /**
      * Sets a message id
      *
      * @param string $id
      */
-    public function setId($id);
+    public function setId(string $id);
 
     /**
      * Returns the set message id
@@ -42,5 +42,5 @@ interface MessageInterface
      *
      * @return string
      */
-    public function getId();
+    public function getId(): string;
 }

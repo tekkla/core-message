@@ -8,7 +8,7 @@ namespace Core\Message;
  * @copyright 2016
  * @license MIT
  */
-class AbstractMessageHandler implements \IteratorAggregate
+class AbstractMessageHandler implements MessageHandlerInterface
 {
 
     /**

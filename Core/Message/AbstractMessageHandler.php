@@ -5,7 +5,7 @@ namespace Core\Message;
  * AbstractMessageHandler.php
  *
  * @author Michael "Tekkla" Zorn <tekkla@tekkla.de>
- * @copyright 2016
+ * @copyright 2016-2017
  * @license MIT
  */
 class AbstractMessageHandler implements MessageHandlerInterface
@@ -21,7 +21,7 @@ class AbstractMessageHandler implements MessageHandlerInterface
      *
      * {@inheritdoc}
      *
-     * @see IteratorAggregate::getIterator()
+     * @see \IteratorAggregate::getIterator()
      */
     public function getIterator()
     {
@@ -57,7 +57,7 @@ class AbstractMessageHandler implements MessageHandlerInterface
      * @param string $key
      *            Id of element in storage
      */
-    public function get($key)
+    public function get(string $key)
     {
         return $this->storage->get($key);
     }
@@ -67,7 +67,7 @@ class AbstractMessageHandler implements MessageHandlerInterface
      *
      * @return array of all stored elements
      */
-    public function getAll()
+    public function getAll(): array
     {
         return $this->storage->getAll();
     }

@@ -5,7 +5,7 @@ namespace Core\Message;
  * MessageStorage.php
  *
  * @author Michael "Tekkla" Zorn <tekkla@tekkla.de>
- * @copyright 2016
+ * @copyright 2016-2017
  * @license MIT
  */
 class MessageStorage implements StorageInterface
@@ -16,8 +16,7 @@ class MessageStorage implements StorageInterface
     /**
      *
      * {@inheritdoc}
-     *
-     * @see IteratorAggregate::getIterator()
+     * @see \IteratorAggregate::getIterator()
      */
     public function getIterator()
     {
@@ -27,22 +26,20 @@ class MessageStorage implements StorageInterface
     /**
      *
      * {@inheritdoc}
-     *
      * @see \Core\Message\StorageInterface::add()
      */
-    public function add(MessageInterface $value)
+    public function add(MessageInterface $message)
     {
         if (empty($this->storage)) {
             $this->storage = [];
         }
-
+        
         $this->storage[] = $value;
     }
 
     /**
      *
      * {@inheritdoc}
-     *
      * @see \Core\Message\StorageInterface::clear()
      */
     public function clear()
@@ -53,10 +50,9 @@ class MessageStorage implements StorageInterface
     /**
      *
      * {@inheritdoc}
-     *
      * @see \Core\Message\StorageInterface::getAll()
      */
-    public function getAll()
+    public function getAll(): array
     {
         return $this->storage;
     }
@@ -64,7 +60,6 @@ class MessageStorage implements StorageInterface
     /**
      *
      * {@inheritdoc}
-     *
      * @see \Core\Message\StorageInterface::setStorage()
      */
     public function setStorage(array &$storage)

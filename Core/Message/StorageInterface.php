@@ -5,7 +5,7 @@ namespace Core\Message;
  * StorageInterface.php
  *
  * @author Michael "Tekkla" Zorn <tekkla@tekkla.de>
- * @copyright 2016
+ * @copyright 2016-2017
  * @license MIT
  */
 interface StorageInterface extends \IteratorAggregate
@@ -14,27 +14,25 @@ interface StorageInterface extends \IteratorAggregate
     /**
      * Sets reference to storage to use
      *
-     * @param mixed $storage
-     *            Reference to the storage wher ethe data will be hold
+     * @param array $storage
+     *            Reference to the storage where the data will be hold
      */
     public function setStorage(array &$storage);
 
     /**
      * Adds a message to the storage
      *
-     * @param string $key
-     *            Id key of the element
-     * @param mixed $value
-     *            The value to store
+     * @param MessageInterface $message
+     *            The message to store
      */
-    public function add(MessageInterface $value);
+    public function add(MessageInterface $message);
 
     /**
      * Returns all elements in stored as array
      *
-     * @return array of all stored elements
+     * @return array
      */
-    public function getAll();
+    public function getAll(): array;
 
     /**
      * Clears the the storage content

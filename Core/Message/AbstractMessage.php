@@ -5,7 +5,7 @@ namespace Core\Message;
  * AbstractMessage.php
  *
  * @author Michael "Tekkla" Zorn <tekkla@tekkla.de>
- * @copyright 2016
+ * @copyright 2016-2017
  * @license MIT
  */
 abstract class AbstractMessage implements MessageInterface
@@ -29,7 +29,7 @@ abstract class AbstractMessage implements MessageInterface
      *
      * @see \Core\Message\MessageInterface::setMessage()
      */
-    public function setMessage($message)
+    public function setMessage(string $message)
     {
         $this->message = $message;
     }
@@ -40,7 +40,7 @@ abstract class AbstractMessage implements MessageInterface
      *
      * @see \Core\Message\MessageInterface::getMessage()
      */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->message;
     }
@@ -51,7 +51,7 @@ abstract class AbstractMessage implements MessageInterface
      *
      * @see \Core\Message\MessageInterface::getId()
      */
-    public function getId()
+    public function getId(): string
     {
         return $this->id;
     }
@@ -62,7 +62,7 @@ abstract class AbstractMessage implements MessageInterface
      *
      * @see \Core\Message\MessageInterface::setId()
      */
-    public function setId($id)
+    public function setId0(string $id)
     {
         $this->id = $id;
     }

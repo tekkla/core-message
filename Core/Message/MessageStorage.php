@@ -34,7 +34,7 @@ class MessageStorage implements StorageInterface
             $this->storage = [];
         }
         
-        $this->storage[] = $value;
+        $this->storage[] = $message;
     }
 
     /**
